@@ -1,1 +1,3 @@
-# sol-armada-2.0
+# sol-armada
+
+a [Sails](http://sailsjs.org) application
