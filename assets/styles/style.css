@@ -123,6 +123,7 @@ a:hover, a:focus {
   z-index: 2;
   margin-top: 0;
   margin-bottom: 96px;
+  color: black;
 }
 
 .underline {
@@ -132,7 +133,8 @@ a:hover, a:focus {
   width: 0;
   height: 10px;
   z-index: -1;
-  background-color: #F26F70;
+  /*background-color: #F26F70;*/
+  background-color: #FEBE59;
 }
 
 .standard-title {
@@ -9357,4 +9359,37 @@ a[data-popup] {
 -----------------------------------------------------------------------------*/
 .mm-menu__address > p > a, .mm-menu__address > a {
   color: white;
+}
+
+.spacer5 {
+  height: 5rem;
+}
+
+.spacer10 {
+  height: 10rem;
+}
+
+#about {
+  background-image: url('../images/Warp.png');
+  background-position-x: 70%;
+  background-position-y: -30%;
+  color: white;
+}
+
+#about > div > .row > div > p > a, #about > div > .row > div > h3 {
+  color: #FEBE01;
+}
+
+.plus:after {
+  content: '+';
+}
+
+@media (max-width: 990px) {
+  #about {
+    background-image: url('../images/pattern/pattern-light.png');
+    color: black;
+  }
+  #about > div > .row > div > .spacer10 {
+    height: 0;
+  }
 }

@@ -1,4 +1,8 @@
-
+<% var oneDay = 24*60*60*1000; %>
+<% var founded = new Date("December 27, 2014"); %>
+<% var today = new Date(); %>
+<% var daysSince = Math.round(Math.abs((founded.getTime() - today.getTime())/(oneDay))); %>
+<% console.log(daysSince); %>
 
     <div id="home" class="pages">
 
@@ -432,18 +436,20 @@
             <div class="row">
 
                 <div class="col-md-5 col-sm-12">
+
+                <div class="spacer5"></div>
                     <h3>Who We Are</h3>
                     <p>A global online gaming community focused on Star Citizen</p>
                     <h3>What We Do</h3>
-                    <p>Trade, Security and Science</p>
+                    <p>The Sol Armada focuses on intergalactic trade operations as well as security and mission escort services. We operate a vast network of players in a multitude of in-game careers, working together to support growth and foster a positive online gaming community.</p>
                     <h3>What We Stand For</h3>
                     <p>Equal opportunity for gameplay in Star Citizen, without piracy</p>
                     <p>Supporting new players and rewarding loyalty</p>
                     <p>Being a safe space to have fun and meet like-minded people</p>
                     <h3>How We Operate</h3>
-                    <p><a href="https://discordapp.com/features">Discord</a> for primary communication</p>
-                    <p>Meetings every 1st and 3rd Sunday of every month in the Conference room</p>
-                    <p>Star Citizen news, live tech support, and modern text chat with an easy to use interface.</p>
+                    <p>We use <a href="https://discordapp.com/features">Discord</a> for primary communication, where you can stay updated on Star Citizen news, get your questions answered, and enjoy our active chat on an easy-to-use interface.</p>
+                    <p>We hold meetings over voice chat every 1st and 3rd Sunday, at 10am PST (5pm GMT) and 7pm PST (2am GMT), of every month in the Conference room</p>
+                    <!-- <p>Get Star Citizen news, get your questions answered, and enjoy an active chat on a modern, simple interface.</p> -->
                     <!-- <ul class="progress-wrap">
                         <li>
                             <div class="bar">
@@ -508,9 +514,9 @@
 
                 </div>
 
-                <div class="col-md-7 hidden-xs hidden-sm">
+                <div class="col-md-6 col-md-offset-1 hidden-xs hidden-sm">
 
-                    <!-- <div class="img-full animated" data-animation="fadeInRight"><img src="images/hero-img/imac2.png" height="624" width="1184" alt=""></div> -->
+                    <div class="img-full animated" data-animation="fadeInRight"><img src="images/logo/Black.png" width="700" alt=""></div>
 
                 </div>
 
@@ -518,17 +524,16 @@
 
         </div>
 
-        <!-- <div class="container-fluid deco-parting">
+        <div class="container-fluid deco-parting">
 
             <div class="col-md-6">
 
-                <h2 class="deco-header timer" data-to="40" data-speed="2000"></h2>
+                <h2 class="deco-header timer" data-to="110" data-speed="2000"></h2>
 
             </div>
 
             <div class="col-md-6">
-                <h3>reasons to <br>
-                    work with us</h3>
+                <h3>Active Members</h3>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nam quisquam molestiae fugit consectetur quia, laudantium quibusdam. Quisquam, optio praesentium officia aut. Culpa dolorem odit laudantium, animi suscipit iusto qui.</p>
 
@@ -541,15 +546,15 @@
             <div class="row">
 
                 <div class="counter dark-bg col-md-3 col-sm-6 space-y">
-                    <i class="pe-7s-coffee pe-3x animated" data-animation="fadeInUp"></i>
-                    <div class="timer" data-to="35500" data-speed="2000"></div>
-                    <div class="label">Cup of coffee</div>
+                    <i class="fa fa-globe fa-3x animated" data-animation="fadeInUp"></i>
+                    <div class="timer plus" data-to="15" data-speed="2000"></div>
+                    <div class="label">Countries Represented</div>
 
                 </div>
                 <div class="counter dark-bg col-md-3 col-sm-6 space-y">
                     <i class="pe-7s-medal pe-3x animated" data-animation="fadeInUp" data-animation-delay="200"></i>
-                    <div class="timer" data-to="199" data-speed="2000"></div>
-                    <div class="label">award winning</div>
+                    <div class="timer" data-to="<%- daysSince %>" data-speed="2000"></div>
+                    <div class="label">days since founding</div>
 
                 </div>
                 <div class="counter dark-bg col-md-3 col-sm-6 space-y">
@@ -567,7 +572,7 @@
 
             </div>
 
-        </div> -->
+        </div>
 
         <!-- <div class="highlight-section text-center">
 
@@ -606,8 +611,8 @@
     </div>
     <!-- end about -->
 
-    <!-- Start Work -->
-    <!-- <div id="work" class="pages">
+    <!-- Start divisions -->
+    <div id="divisions" class="pages">
 
         <section class="l-portfolio">
 
@@ -617,7 +622,7 @@
 
                     <div class="col-md-12 text-center">
 
-                        <h1 class="section-header"> our work  <span class="underline animated" data-animation="fullWidth"></span></h1>
+                        <h1 class="section-header"> our divisions  <span class="underline animated" data-animation="fullWidth"></span></h1>
 
                     </div>
 
@@ -867,11 +872,11 @@
 
         </section>
 
-    </div> -->
+    </div>
     <!-- end work -->
 
     <!-- Start Services -->
-    <!-- <div id="services" class="pages">
+    <div id="leadership" class="pages">
 
         <div class="container space-y-t">
 
@@ -879,7 +884,7 @@
 
                 <div class="col-md-12 text-center">
 
-                    <h1 class="section-header">what we do <span class="underline animated" data-animation="fullWidth"></span></h1>
+                    <h1 class="section-header">leadership <span class="underline animated" data-animation="fullWidth"></span></h1>
 
                 </div>
 
@@ -1014,7 +1019,7 @@
 
     </div>
 
-    <div id="team" class="pages">
+    <div id="FAQ" class="pages">
 
         <div class="container space-y-t">
 
@@ -1022,7 +1027,7 @@
 
                 <div class="col-md-12 text-center">
 
-                    <h1 class="section-header">meet the team <span class="underline animated" data-animation="fullWidth"></span></h1>
+                    <h1 class="section-header">faq <span class="underline animated" data-animation="fullWidth"></span></h1>
 
                 </div>
 
@@ -1201,7 +1206,7 @@
 
         </div>
 
-    </div> -->
+    </div>
     <!-- end team -->
 
     <!-- Start News -->
