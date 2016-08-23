@@ -19,6 +19,7 @@
 var cssFilesToInject = [
 'styles/dependencies/bootstrap.min.css',
   'styles/**/*.css',
+  'styles/custom.css'
 ];
 
 
@@ -31,6 +32,7 @@ var jsFilesToInject = [
   'js/dependencies/sails.io.js',
   'js/dependencies/jquery.1.12.3.js',
   'js/dependencies/jquery-ui.min.js',
+  'js/dependencies/**/*.js',
   'js/jquery.easing.1.3.js',
   'js/jquery.appear.js',
   'revolution/jquery.themepunch.tools.min.js',

@@ -1352,6 +1352,16 @@
 
     });
 
+    //Custom stuff
+    $('#faqModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var answer = button.data('answer');
+      var question = button.data('question');
+      var modal = $(this);
+      modal.find('.question').html(question);
+      modal.find('.answer').html(answer);
+    });
+
 
   });
 
