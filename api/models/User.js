@@ -34,7 +34,7 @@ module.exports = {
             type: 'string'
         },
         confirmationCode: {
-            
+            type: 'string'
         },
         toJSON: function() {
             var obj = this.toObject();
