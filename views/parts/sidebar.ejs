@@ -2,7 +2,7 @@
 
     <h1 class="mm-menu__title text-uppercase">Login</h1>
 
-    <div class="mm-menu__address">
+    <div class="mm-menu__address signinField">
         <form action="/login" class="form">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="email">
@@ -15,7 +15,31 @@
 
         <h6 class="text-uppercase text-center">- or -</h6>
 
-        <button class="btn btn-submit btn-block">Register</button>
+        <button class="btn btn-success btn-block register">Register</button>
+    </div>
+
+    <div class="mm-menu__address registerField" style="display: none;">
+        <form class="form registerForm">
+            <div class="form-group">
+                <input type="text" name="Username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="repassword" class="form-control" placeholder="Repeat Password" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="rsiHandle" class="form-control" placeholder="RSI Handle">
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-block registerButton">Register</button></div>
+            <div class="form-group form-error" style="display: none;">
+                <p>Test</p>
+            </div>
+        </form>
     </div>
 
     <div class="mm-menu__address">

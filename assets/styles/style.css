@@ -9435,3 +9435,7 @@ a[data-popup] {
   text-align: left;
   vertical-align: middle;
 }
+
+.form-error {
+  color: red;
+}

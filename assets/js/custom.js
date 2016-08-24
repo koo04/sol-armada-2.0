@@ -1362,6 +1362,31 @@
       modal.find('.answer').html(answer);
     });
 
+    $('.register').click(function(e) {
+      $('.signinField').fadeOut();
+      $('.registerField').fadeIn();
+      $('.mm-menu__title').html('Register');
+    });
+
+    $('.registerButton').click(function(e) {
+      e.preventDefault();
+      var form = $('.registerForm').serialize();
+      var password = $('input[name="password"]').val();
+      var repassword = $('input[name="repassword"]').val();
+      if(password.length < 6) {
+        $('.form-error p').html('Password must atleast be 6 characters long!');
+        $('.form-error').show();
+      } else {
+        if(password != repassword) {
+          $('.form-error p').html('Passwords need to match!');
+          $('.form-error').show();
+        } else {
+          $.post('/register', form, function(data) {
+            console.log(data);
+          });
+        }
+      }
+    });
 
   });
 
