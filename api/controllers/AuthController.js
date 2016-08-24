@@ -19,6 +19,28 @@ module.exports = {
         });
     },
 
+    confirm: function(req, res) {
+        var code = req.query.code;
+        User.findOne({confirmationCode: code}).exec(function(err, user) {
+            if(err) {
+                sails.log.error(err);
+                return res.serverError(err);
+            }
+            if(user) {
+                User.update(user, {confirmationCode: null}).exec(function(err, udpatedUser) {
+                    if(err) {
+                        sails.log.error(err);
+                        return res.serverError(err);
+                    }
+                    return res.view('messages/confirmed', { redirect: '/' });
+                });
+                
+            } else {
+                return res.notFound("That confirmation code does not exist!");
+            }
+        });
+    },
+
     login: function(req, res) {
 
         passport.authenticate('local', function(err, user, info) {

@@ -1,4 +1,5 @@
 var bcrypt = require('bcryptjs');
+var crypto = require('crypto');
 
 module.exports = {
 
@@ -50,8 +51,17 @@ module.exports = {
                     sails.log.error(err);
                     cb(err);
                 } else {
-                    user.password = hash;
-                    cb();
+                    crypto.randomBytes(48, function(err, buffer) {
+                        if (err) {
+                            sails.log.error(err);
+                            cb(err);
+                        } else {
+                            user.confirmationCode = buffer.toString('hex').substring(1,12);
+                            Email.register();
+                            user.password = hash;
+                            cb();
+                        }
+                    });
                 }
             });
         });

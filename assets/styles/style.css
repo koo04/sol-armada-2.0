@@ -9439,3 +9439,12 @@ a[data-popup] {
 .form-error {
   color: red;
 }
+
+#confirmed {
+  background: url(/images/pattern/pattern-dark.png);
+  padding: 20rem;
+}
+
+#confirmed h1 {
+  color: white;
+}

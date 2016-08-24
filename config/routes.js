@@ -35,7 +35,8 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  'POST /register': 'AuthController.register'
+  'POST /register': 'AuthController.register',
+  'GET /confirm' : 'AuthController.confirm'
 
   /***************************************************************************
   *                                                                          *
