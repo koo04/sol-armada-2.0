@@ -16,7 +16,7 @@ module.exports = {
             [{
                 data:'<html>' +
                 '<body>' +
-                '<img src="http//solarmada.com/images/logo/Grey.png" height="100" width="100" />' +  
+                '<img src="http://solarmada.com/images/logo/Grey.png" height="100" width="100" />' +  
                 '</body>' + 
                 '</html>', 
             alternative:true}]
