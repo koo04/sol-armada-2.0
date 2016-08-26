@@ -1,14 +1,15 @@
 var email = require("emailjs");
-
 var server = email.server.connect({
-    host: 'localhost'
+    host: 'localhost',
+    ssl: false
 });
 
 module.exports = {
     register: function(user, cb) {
+        console.log(server);
         server.send({
-            text:    "Test", 
-            from:    "Test <test@solarmada.com>", 
+            text:    "", 
+            from:    "Sol Armada <donotreply@solarmada.com>", 
             to:      (user.username || "New Sol Armada Member") + " <" + user.email + ">",
             subject: "Verify Email",
             attachment: 

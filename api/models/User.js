@@ -57,7 +57,6 @@ module.exports = {
                             cb(err);
                         } else {
                             user.confirmationCode = buffer.toString('hex').substring(1,12);
-                            Email.register();
                             user.password = hash;
                             cb();
                         }

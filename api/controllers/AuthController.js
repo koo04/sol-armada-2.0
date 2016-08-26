@@ -15,7 +15,9 @@ module.exports = {
                 sails.log.error(err);
                 return res.json({error: err});
             }
-            return res.json({created: true});
+            Email.register(user, function(err, message) {
+                return res.json({created: true});
+            });
         });
     },
 
