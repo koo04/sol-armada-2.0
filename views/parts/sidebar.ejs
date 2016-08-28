@@ -2,7 +2,7 @@
     
     <div class="mm-menu__address userInfo" style="display: none;">
         <h2 class="username" style="color: white"><% if(req.user) { %><%- req.user.username %><% } %></h2>
-        <% if(req.user.confirmationCode) { %>
+        <% if(req.user && req.user.confirmationCode) { %>
         <p>You have not confirmed your email yet! Please check your email (spam folder?) for the link.</p>
         <p>If you don't see an email, please click <a href="/confirm/resend?user=<%- req.user.id %>">here</a> to send a new one.</p>
         <% } %>
