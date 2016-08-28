@@ -1379,7 +1379,7 @@
           $('.signinField').fadeOut(function() {
             $('.userInfo').fadeIn();
             if(data.user.confirmationCode != null) {
-              $('<p style="color: red">You have not confirmed your email yet!</p><p>If you do not see the email, please click <a href="/confirm/resend?user=<%- req.user.id %>" style="color: blue">here</a> to send a new one.</p>').insertAfter('.username');
+              $('<p style="color: red">You have not confirmed your email yet!</p><p>If you do not see the email, please click <a href="/confirm/resend?user="' + data.user.id + ' style="color: blue">here</a> to send a new one.</p>').insertAfter('.username');
             }
           });
         } else {
