@@ -183,7 +183,7 @@
 
       ga('create', 'UA-83271360-1', 'auto');
       ga('send', 'pageview');
-      var id = <%- JSON.stringify(req.user).id || 0 %>;
+      var id = (user.id || 0);
       ga('set', 'userId', id);
     </script>
   </body>
