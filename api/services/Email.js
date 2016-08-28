@@ -44,7 +44,9 @@ module.exports = {
                     '<img src="http://solarmada.com/images/logo/Grey.png" height="400" width="400"/>' +
                     '<h1>Confirmation Link</h1>' +
                     '<p>Please click the link below to confirm your email!</p>' +
-                    '<p><a href="http:// ' + sails.config.url + '/confirm?code=' + user.confirmationCode + '">Confirm Email</a></p>' +
+                    '<p><a href="http://' + sails.config.url + '/confirm?code=' + user.confirmationCode + '">Confirm Email</a></p>' +
+                    '<p>If the link above does not work. Copy and paste the link below in your browser URL bar</p>' +
+                    '<p>http://' + sails.config.url + '/confirm?code=' + user.confirmationCode + '</p>' + 
                     '</body>' +
                     '</html>',
                 alternative:true
