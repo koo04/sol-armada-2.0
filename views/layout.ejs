@@ -104,7 +104,7 @@
     <script src="/js/video-player.js"></script>
     <!--SCRIPTS END-->
     <script>
-      var user = <% if(req.user != undefined) { %><%- JSON.stringify(req.user) %><% } else { %> null <% } %>;
+      var user = <%- JSON.stringify(req.user || null) %>;
     </script>
   </head>
 
