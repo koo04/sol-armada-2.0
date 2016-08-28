@@ -38,7 +38,8 @@ module.exports.routes = {
   'POST /register': 'AuthController.register',
   'GET /confirm' : 'AuthController.confirm',
   'GET /confirm/resend': 'AuthController.resend',
-  'POST /login': 'AuthController.login'
+  'POST /login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
 
   /***************************************************************************
   *                                                                          *

@@ -34,6 +34,7 @@ passport.use(new LocalStrategy({
             email: user.email,
             createdAt: user.createdAt,
             username: user.username,
+            confirmationCode: user.confirmationCode,
             id: user.id
           };
           return done(null, returnUser, {

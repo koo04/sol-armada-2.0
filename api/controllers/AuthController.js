@@ -64,17 +64,19 @@ module.exports = {
     },
 
     login: function(req, res) {
-        console.log(req.body);
         passport.authenticate('local', function(err, user, info) {
             if ((err) || (!user)) {
-                return res.send({
+                return res.json({
+                    success: false,
                     message: info.message,
                     user: user
                 });
             }
 
             req.logIn(user, function(err) {
-                if (err) res.send(err);
+                if (err) {
+                    return res.json({success:false, message: err});
+                }
                 delete user.password;
                 return res.json({
                     success: true,
