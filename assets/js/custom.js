@@ -1365,13 +1365,15 @@
     });
 
     $('.register').click(function(e) {
-      $('.signinField').fadeOut();
-      $('.registerField').fadeIn();
+      $('.signinField').fadeOut(function() {
+        $('.registerField').fadeIn();
+      });
       $('.mm-menu__title').html('Register');
     });
 
     $('.registerButton').click(function(e) {
       e.preventDefault();
+      $('.form-error').hide();
       var form = $('.registerForm').serialize();
       var password = $('input[name="password"]').val();
       var repassword = $('input[name="repassword"]').val();
@@ -1384,7 +1386,15 @@
           $('.form-error').show();
         } else {
           $.post('/register', form, function(data) {
-            console.log(data);
+            if(data.error) {
+              $('.form-error p').html("Error when registering!\n\r" + data.error);
+              return;
+            }
+            $('.form-error').hide();
+            $('.registerForm').fadeOut(function() {
+              $('.registerField .success').fadeIn();
+            });
+            
           });
         }
       }
