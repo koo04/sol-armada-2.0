@@ -37,6 +37,9 @@ module.exports = {
         confirmationCode: {
             type: 'string'
         },
+        resetCode: {
+            type: 'string'
+        },
         toJSON: function() {
             var obj = this.toObject();
             delete obj.password;
