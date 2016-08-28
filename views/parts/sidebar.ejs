@@ -1,16 +1,27 @@
 <nav id="mm-menu" class="mm-menu">
-
-    <h1 class="mm-menu__title text-uppercase">Login</h1>
+    
+    <div class="mm-menu__address userInfo" style="display: none;">
+        <h2 class="username" style="color: white"><% if(req.user) { %><%- req.user.username %><% } %></h2>
+        <% if(user.confirmationCode) { %>
+        <p>You have not confirmed your email yet! Please check your email (spam folder?) for the link.</p>
+        <p>If you don't see an email, please click <a href="/confirm/resend?user=<%- user.id %>">here</a> to send a new one.</p>
+        <% } %>
+    </div>
 
     <div class="mm-menu__address signinField">
-        <form action="/login" class="form">
+    
+        <h1 class="mm-menu__title text-uppercase">Login</h1>
+
+        <form method="post" class="form loginForm">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="email">
+                <input type="text" class="form-control" name="email" placeholder="email">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="password">
+                <input type="password" class="form-control" name="password" placeholder="password">
             </div>
-            <form-group><button class="btn btn-primary btn-block">Login</button></form-group>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block loginButton">Login</button>
+            </div>
         </form>
 
         <h6 class="text-uppercase text-center">- or -</h6>

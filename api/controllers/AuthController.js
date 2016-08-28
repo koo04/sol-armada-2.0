@@ -45,8 +45,26 @@ module.exports = {
         });
     },
 
-    login: function(req, res) {
+    resend: function(req, res) {
+        var user = req.query.user;
+        User.findOne({id: user}).exec(function(err, user) {
+            if(err) {
+                sails.log.error(err);
+                return res.serverError(err);
+            }
+            if(user.confirmationCode) {
+                Email.confirm(user, function(err) {
+                    if(err) sails.log.error(err);
+                });
+                return res.view('messages/emailSend', {email: user.email});
+            } else {
+                return res.view('messages/confirmedAlready', {email: user.email});
+            }
+        });
+    },
 
+    login: function(req, res) {
+        console.log(req.body);
         passport.authenticate('local', function(err, user, info) {
             if ((err) || (!user)) {
                 return res.send({
@@ -54,19 +72,24 @@ module.exports = {
                     user: user
                 });
             }
+
             req.logIn(user, function(err) {
                 if (err) res.send(err);
-                return res.send({
+                delete user.password;
+                return res.json({
+                    success: true,
                     message: info.message,
                     user: user
                 });
             });
 
         })(req, res);
+
     },
 
     logout: function(req, res) {
         req.logout();
         res.redirect('/');
     }
+    
 };

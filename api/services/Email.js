@@ -31,6 +31,29 @@ module.exports = {
         });
     },
 
+    confirm: function(user, cb) {
+        server.send({
+            text:    "", 
+            from:    "Sol Armada <donotreply@solarmada.com>", 
+            to:      (user.username || "New Sol Armada Member") + " <" + user.email + ">",
+            subject: "Verify Email",
+            attachment: 
+            [{
+                data:'<html>' +
+                    '<body style="font-align: center;">' +
+                    '<img src="http://solarmada.com/images/logo/Grey.png" height="400" width="400"/>' +
+                    '<h1>Confirmation Link</h1>' +
+                    '<p>Please click the link below to confirm your email!</p>' +
+                    '<p><a href="http://" ' + sails.config.url + '/confirm?code="' + user.confirmationCode + '>Confirm Email</a></p>' +
+                    '</body>' +
+                    '</html>',
+                alternative:true
+            }]
+        }, function(err, message) {
+            return cb(err);
+        });
+    },
+
     confirmed: function(user, cb) {
         server.send({
             text:    "", 

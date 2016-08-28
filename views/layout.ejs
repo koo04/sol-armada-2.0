@@ -103,6 +103,9 @@
     <script src="/js/mediaelement-and-player.min.js"></script>
     <script src="/js/video-player.js"></script>
     <!--SCRIPTS END-->
+    <script>
+      var user = <%- JSON.stringify(req.user || null) %>;
+    </script>
   </head>
 
   <body data-smooth-scroll="true">

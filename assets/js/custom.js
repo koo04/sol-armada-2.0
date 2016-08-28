@@ -1364,6 +1364,25 @@
       modal.find('.answer').html(answer);
     });
 
+    if(user) {
+        $('.signinField').fadeOut(function() {
+          $('.userInfo').fadeIn();
+        });
+    }
+
+    $('.loginButton').click(function(e) {
+      e.preventDefault();
+      var form = $('.loginForm').serialize();
+      $.post('/login', form).done(function(data) {
+        if(data.success) {
+          $('.userInfo .username').html(data.user.username);
+          $('.signinField').fadeOut(function() {
+            $('.userInfo').fadeIn();
+          });
+        }
+      });
+    });
+
     $('.register').click(function(e) {
       $('.signinField').fadeOut(function() {
         $('.registerField').fadeIn();
