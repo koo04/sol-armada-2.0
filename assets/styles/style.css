@@ -9453,6 +9453,7 @@ a[data-popup] {
   background: url(/images/pattern/pattern-dark.png);
   padding-top: 7rem;
   color: white;
+  min-height: 1080px;
 }
 
 #admin .users, #admin h1, #admin h2, #admin h3, #admin h4 {
