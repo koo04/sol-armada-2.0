@@ -1,0 +1,44 @@
+<% console.log(users); %>
+<div id="admin" class="pages">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1>User List</h1>
+        </div>
+    </div>
+    <div class="row users">
+        <div class="col-lg-8 col-lg-offset-2 title">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h3 class="username">Username</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="email">Email</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="rsi">RSI Handle</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="rsi">Verified</h3>
+                </div>
+            </div>
+        </div>
+        <% users.forEach(function(user, index, array) { %> 
+        <div class="col-lg-8 col-lg-offset-2 user">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h4 class="username"><%- user.username %></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="email"><%- user.email %></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="rsi"><%- user.rsiHandle %></h4>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="verified" data-verified=<% if(!user.confirmationCode) { %> true <% } else { %> false <% } %>><% if(!user.confirmationCode) { %> Yes <% } else { %> No <% } %></h4>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>

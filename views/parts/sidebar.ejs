@@ -6,6 +6,9 @@
         <p style="color: red">You have not confirmed your email yet!</p>
         <p>If you don't see the email, please click <a href="/confirm/resend?user=<%- req.user.id %>" style="color: blue">here</a> to send a new one.</p>
         <% } %>
+        <% if(req.user && req.user.isAdmin) { %>
+        <a href="/admin" class="btn btn-info btn-block">Administration</a>
+        <% } %>
         <a class="btn btn-primary btn-block" href="/logout">Logout</a>
     </div>
 
@@ -63,7 +66,7 @@
 
     <div class="mm-menu__address">
         <h6 class="text-uppercase">Questions?</h6>
-        <p><a href="mailto:support@solarmada.com">support@solarmada.com</a></p>
+        <p><a href="mailto:thesolarmada@gmail.com">thesolarmada@gmail.com</a></p>
 
     </div>
     <!-- / mm-menu__address-->

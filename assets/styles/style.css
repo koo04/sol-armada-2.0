@@ -9448,3 +9448,21 @@ a[data-popup] {
 #confirmed h1 {
   color: white;
 }
+
+#admin {
+  background: url(/images/pattern/pattern-dark.png);
+  padding-top: 7rem;
+  color: white;
+}
+
+#admin .users, #admin h1, #admin h2, #admin h3, #admin h4 {
+  color: white;
+}
+
+#admin h4[data-verified="true"] {
+  color: green;
+}
+
+#admin h4[data-verified="false"] {
+  color: red;
+}
