@@ -38,6 +38,8 @@ module.exports.routes = {
   'POST /register': 'AuthController.register',
   'GET /confirm' : 'AuthController.confirm',
   'GET /confirm/resend': 'AuthController.resend',
+  'GET /discord': 'MiscController.discord',
+  'GET /voice': 'MiscController.discord2',
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
 
