@@ -154,12 +154,12 @@
 
       if ($carnaMobile.data('has-button') === true) {
         $button.on('click', function(event) {
+          event.preventDefault();
           $(this).parent().siblings('.mobile-wrap').stop(true, true).slideToggle(500, function() {
             whichTransitionEvent();
           });
           $(this).toggleClass('active');
           return false;
-          event.preventDefault();
         });
       }
     }
@@ -1392,40 +1392,38 @@
     $('.register').click(function(e) {
       $('.signinField').fadeOut(function() {
         $('.registerField').fadeIn();
+        $('.mm-menu__title').html('Register');
       });
-      $('.mm-menu__title').html('Register');
     });
 
     $('.registerButton').click(function(e) {
       e.preventDefault();
       $('.form-error').hide();
       var form = $('.registerForm').serialize();
+      var formArray = $('.registerForm').serializeArray();
       var password = $('input[name="password"]').val();
       var repassword = $('input[name="repassword"]').val();
-      if(password.length < 6) {
-        $('.form-error p').html('Password must at least be 6 characters long!');
-        $('.form-error').show();
-        console.log("Password: " + password, "Password Length: " + password.length);
-      } else {
-        if(password != repassword) {
-          $('.form-error p').html('Passwords need to match!');
+        if(formArray[2].value.length < 6) {
+          $('.form-error p').html('Password must at least be 6 characters long!');
           $('.form-error').show();
         } else {
-          $.post('/register', form, function(data) {
-            if(data.error) {
-              $('.form-error p').html("Error when registering!\n\r" + data.error);
-              return;
-            }
-            $('.form-error').hide();
-            $('.registerForm').fadeOut(function() {
-              $('.registerField .success').fadeIn();
+          if(formArray[2].value != formArray[3].value) {
+            $('.form-error p').html('Passwords need to match!');
+            $('.form-error').show();
+          } else {
+            $.post('/register', form, function(data) {
+              if(data.error) {
+                $('.form-error p').html("Error when registering!\n\r" + data.error);
+                return;
+              }
+              $('.form-error').hide();
+              $('.registerForm').fadeOut(function() {
+                $('.registerField .success').fadeIn();
+              });
             });
-            
-          });
+          }
         }
-      }
     });
-
   });
 
 })(window.jQuery);
