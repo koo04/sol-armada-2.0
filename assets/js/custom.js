@@ -1405,7 +1405,7 @@
       if(password.length < 6) {
         $('.form-error p').html('Password must at least be 6 characters long!');
         $('.form-error').show();
-        console.log(password, password.length);
+        console.log("Password: " + password, "Password Length: " + password.length);
       } else {
         if(password != repassword) {
           $('.form-error p').html('Passwords need to match!');
