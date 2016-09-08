@@ -1,6 +1,6 @@
 module.exports = {
     discord: function(req, res) {
-        return res.view('messages/discordRedirect', {link: 'http://discord.gg/0Vr0BMdhh6uB4isw'});
+        return res.view('messages/discordRedirect', {link: 'https://discord.gg/zpSGgV3'});
     },
     
     discord2: function(req, res) {
