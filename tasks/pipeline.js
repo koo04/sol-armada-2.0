@@ -19,7 +19,8 @@
 var cssFilesToInject = [
 'styles/dependencies/bootstrap.min.css',
   'styles/**/*.css',
-  'styles/custom.css'
+  'styles/custom.css',
+  '!styles/locals/**/*.scss'
 ];
 
 
