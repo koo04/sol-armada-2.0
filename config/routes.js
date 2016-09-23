@@ -42,7 +42,6 @@ module.exports.routes = {
   'GET /voice': 'MiscController.discord2',
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
-  'GET /flywithus': 'MiscController.flywithus',
 
   /***************************************************************************
   *                                                                          *
